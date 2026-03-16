@@ -2,51 +2,103 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Clash Grotesk';
-  src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/SINQ57HHHPFVR2H2M32ZNEFSVLE2LFD2/7IAKEQYNYVZZQGJW7R4Y7C5IZ7XHSFQO/DKSXVIDJANOLWNE4OACLWSGITSUTBGB3.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Clash Grotesk';
-  src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/O462VY6O6FTQCS72XVMTQHXAM4NN5CY3/TWF57ITZORMJ3MEWLQQIVO6BMXIB6FUR/MJQFMMOTEGNXDVM7HBBDTQHTVB2M7Y6G.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
+/* Clash Grotesk Font Faces */
+@font-face { font-family: 'Clash Grotesk'; src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/SINQ57HHHPFVR2H2M32ZNEFSVLE2LFD2/7IAKEQYNYVZZQGJW7R4Y7C5IZ7XHSFQO/DKSXVIDJANOLWNE4OACLWSGITSUTBGB3.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Clash Grotesk'; src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/O462VY6O6FTQCS72XVMTQHXAM4NN5CY3/TWF57ITZORMJ3MEWLQQIVO6BMXIB6FUR/MJQFMMOTEGNXDVM7HBBDTQHTVB2M7Y6G.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Clash Grotesk'; src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/2SAK53YLUN7RMYJU4MYLSBV6SSSJEJZB/RXS4DPGJRKOUFZMF5X5BVUGNNKJT65XZ/DJS4RYGIUYUXJQOHY5VCZPKSTXUSHTSP.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Clash Grotesk'; src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/MKEEQN57GWBZOSYWCRODNJOOZNPLMAKN/5SPTSZGHEACWWLF34DQ4WAA4OGU6PQIF/KN7DX4F6PXB74R6L2K2Y4NH3CB7FC53Q.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Clash Grotesk'; src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/P6VJ47S3OYMUC7HYSJLTK7PEIK5O2NPQ/TK62VLUWA76PMTK2XWBNDZB7QVXJGYE3/I5W5NEJGYVFUC5I4XOXVET63OE5PSVHJ.woff2') format('woff2'); font-weight: 700; font-display: swap; }
 
 :root {
-  --background: 0 0% 0%;
-  --foreground: 0 0% 100%;
+  --bg: #000000;
+  --white: #ffffff;
+  --blue: rgb(51, 194, 255);
+  --purple: rgb(97, 63, 231);
+  --gray: rgb(213, 212, 214);
+  --dark-gray: rgb(61, 61, 61);
+  --card-bg: rgb(23, 23, 23);
+  --card-bg-2: rgb(38, 38, 38);
 }
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-  background-color: black;
-  color: white;
+  background-color: var(--bg);
+  color: var(--white);
   font-family: 'Clash Grotesk', 'Inter', sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(78, 78, 78, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .glass-card {
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.text-gradient {
-  background: linear-gradient(to bottom, #ffffff 0%, #a1a1a1 100%);
+.border-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-blue-bottom {
+  background: radial-gradient(25% 50% at 50% 100%, rgb(15, 147, 255) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.text-gradient-blue {
+  background: linear-gradient(270deg, rgb(51, 194, 255) 0%, rgb(0, 119, 255) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.icon-gradient-purple {
+  background: linear-gradient(0deg, rgba(143, 55, 255, 0.1) 0%, rgba(143, 55, 255, 0.5) 100%);
+  border: 0.67px solid rgba(255, 255, 255, 0.12);
+}
+
+.icon-gradient-blue {
+  background: linear-gradient(0deg, rgba(143, 55, 255, 0.1) 0%, rgba(55, 147, 255, 0.5) 100%);
+  border: 0.67px solid rgba(255, 255, 255, 0.12);
+}
+
+.card-gradient-purple {
+  background: linear-gradient(0deg, rgba(143, 55, 255, 0.05) 0%, rgba(143, 55, 255, 0.25) 100%);
+  border-left: 0.67px solid rgba(255, 255, 255, 0.12);
+  border-right: 0.67px solid rgba(255, 255, 255, 0.12);
+  border-top: 0.67px solid rgba(255, 255, 255, 0.12);
+}
+
+.card-gradient-blue-solid {
+  background: linear-gradient(0deg, rgba(36, 81, 227, 0.1) 0%, rgba(36, 81, 227, 0.35) 100%);
+  border-left: 0.67px solid rgba(255, 255, 255, 0.12);
+  border-right: 0.67px solid rgba(255, 255, 255, 0.12);
+  border-top: 0.67px solid rgba(255, 255, 255, 0.12);
+}
+
+.stacking-card-bg {
+  background: linear-gradient(180deg, rgba(36, 81, 227, 0.11) 0%, rgb(36, 81, 227) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: none;
+  mix-blend-mode: hard-light;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.section-padding {
+  padding: 120px 0;
 }
